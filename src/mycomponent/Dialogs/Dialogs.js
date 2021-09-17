@@ -44,8 +44,8 @@ import Messages from './Messages/Messages';
 // let MessageElement = MessageData.map( elem => <Messages message = {elem.message}/>); 
 
 const Dialogs = (props) => {
-let DialogElement =props.dialogs.map(elem => <DialogItem name = {elem.name} id= {elem.id}/>);
-let MessageElement = props.messages.map( elem => <Messages message = {elem.message}/>); 
+let DialogElement =props.state.dialogs.map(elem => <DialogItem name = {elem.name} id= {elem.id}/>);
+let MessageElement = props.state.messages.map( elem => <Messages message = {elem.message}/>);
 
 	return (
 		

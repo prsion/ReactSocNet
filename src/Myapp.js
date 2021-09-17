@@ -17,8 +17,8 @@ function Myapp(props) {
         <Navbar/>
         <div className="wrap_content">
           {/*<Route path ='/news' component ={News}/>	*/}
-          <Route path='/profiles' render={() => <Profiles posts={props.posts}/>}/>
-          <Route path='/dialogs' render={() => <Dialogs messages={props.messages} dialogs={props.dialogs}/>}/>
+          <Route path='/profiles' render={() => <Profiles state={props.state.profilePage} addPost={props.addPost}/>}/>
+          <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage} />}/>
           <Route path='/news' component={News}/>
         </div>
 

@@ -5,10 +5,11 @@ import Profile from './Profile/Profile';
 
 
 const Profiles = (props) => {
+
 	return (
 		<div className={s.content}>
 			<Profile/>
-		  <Myposts posts = {props.posts}/>
+		  <Myposts posts = {props.state.posts} addPost = {props.addPost}/>
 		</div>
 	)
 }
