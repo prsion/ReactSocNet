@@ -1,0 +1,19 @@
+
+.header {
+  grid-area: h;
+  height: 120px;
+  max-width: 1800px;
+  background-color: #acdfdb;
+	display: grid;
+}
+.header div{
+  height: 120px;
+  width: 120px;
+  
+  
+}
+ .header img {
+  width: 100%;
+  height: 100%;
+  
+  }

@@ -1,0 +1,24 @@
+.navbar {
+  grid-area: n;
+  background-color: #3e518a;
+  height: 100vh;
+}
+.navbar ul{
+text-align:center;
+margin-left: -15%;
+}
+.navbar li{
+list-style-type: none;
+color: #cecece;  
+
+}
+
+.navbar a.active{
+color: rgb(224, 91, 91);
+}
+
+.navbar a{
+  font-size: 1.5em;
+	cursor: pointer;	
+	color: black;
+}
