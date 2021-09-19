@@ -1,7 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Myapp from './Myapp.js';
-import state from './redux/state';
-import {addPost} from "./redux/state";
+import * as serviceWorker from './serviceWorker';
+import {rerenderEntireTree} from "./render";
+import state from "./redux/state";
 
-ReactDOM.render(<Myapp state={state} addPost={addPost} />, document.getElementById('root'));
+rerenderEntireTree (state);
+
+serviceWorker.unregister();
+

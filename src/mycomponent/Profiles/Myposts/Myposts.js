@@ -10,26 +10,28 @@ const Myposts = (props) => {
 
 
 	let addPost = () => {
-
-		let text = newPostElement.current.value ;
+		let text = newPostElement.current.value;
 		props.addPost(text);
+
+	}
+
+	let onPostChange = () => {
+		 let text = newPostElement.current.value;
+		 props.updatePostText(text) ;
 	}
 
 	return (
 		<div>
-			Myposts
+
 			<div>
-				<textarea  ref={newPostElement} name="" id="" cols="30" rows="3"></textarea>
+				<textarea onChange={onPostChange}  ref={newPostElement} value={props.newPostText} />
 					<div>
 					<button onClick={addPost}>Add Post</button>
 					</div>
 			</div>
 			<div className={s.posts}>
 			{postElement}
-				{/*<Post message='Hi how are you?' likes='10'/>
-				<Post message='Its my first post' likes='40'/>
-				<Post message='bla bla ....' likes='11'/>
-				<Post message='REACT ITS COOL ....' likes='99'/>*/}
+
 			</div>
 		</div>
 	);
