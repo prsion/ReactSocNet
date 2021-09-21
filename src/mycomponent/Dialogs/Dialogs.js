@@ -3,7 +3,7 @@ import s from './Dialogs.module.css';
 //import {NavLink} from 'react-router-dom';
 import DialogItem  from './DialogItem/DialogItem';
 import Messages from './Messages/Messages';
-import {updateMessageActionCreator, sendMessageBodyActionCreator} from "../../redux/state";
+import {updateMessageActionCreator, sendMessageBodyActionCreator} from "../../redux/dialogsReducer";
 
 
 
@@ -13,15 +13,15 @@ let state= props.store.getState().dialogsPage;
 
 let DialogElement = state.dialogs.map(elem => <DialogItem name = {elem.name} id= {elem.id}/>);
 let MessageElement = state.messages.map( elem => <Messages message = {elem.message}/>);
-let newMessageText= state.newMessageText;
+let newMessageText = state.newMessageText;
 
 let onSendMessageClick = () => {
 	props.store.dispatch(sendMessageBodyActionCreator());
 }
 
 let onNewMessageChange = (e) => {
-	let bodyMessage = e.target.value ;
-	props.store.dispatch(updateMessageActionCreator(bodyMessage));
+	let text = e.target.value ;
+	props.store.dispatch(updateMessageActionCreator(text));
 	}
 
 	return (
