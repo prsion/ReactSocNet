@@ -17,7 +17,7 @@ function Myapp(props) {
         <div className="wrap_content">
           <Route path='/profiles'
                  render={() => <Profiles state={props.state.profilePage} dispatch={props.dispatch} />}/>
-          <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage} />}/>
+          <Route path='/dialogs' render={() => <Dialogs store={props.store} />}/>
           <Route path='/news' component={News}/>
         </div>
       </div>

@@ -11,15 +11,4 @@ const DialogItem = (props) => {
 				)
  }
 
-
-//  let DialogData = [
-// 					{id:1, name: 'Dimuch'},
-// 					{id:2, name: 'Andrey'},
-// 					{id:3, name: 'Lucie'},
-// 					{id:4, name: 'Sveta'},
-// 					{id:5, name: 'Sasha'}
-// ]
-
- // let DialogElement = DialogData.map(elem => <DialogItem name = {elem.name} id= {elem.id} /> );
-
  export default DialogItem;
