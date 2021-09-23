@@ -1,5 +1,5 @@
 import React from 'react';
-import './Myapp.css';
+import './App.css';
 import Profiles from './mycomponent/Profiles/Profiles';
 import Dialogs from './mycomponent/Dialogs/Dialogs';
 import Header from './mycomponent/Header/Header';
@@ -9,7 +9,7 @@ import {Route} from 'react-router-dom';
 
 
 
-function Myapp(props) {
+function App(props) {
   return (
       <div className="wrap">
         <Header/>
@@ -26,5 +26,5 @@ function Myapp(props) {
   );
 }
 
-export default Myapp;
+export default App;
 
