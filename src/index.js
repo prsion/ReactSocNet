@@ -22,13 +22,6 @@ store.subscribe(()=>{
 });
 
 
-
-
-// store.subscriber(()=>{
-//       let state = store.getState();
-//       rerenderEntireTree(state);
-// });
-
 serviceWorker.unregister();
 
 
