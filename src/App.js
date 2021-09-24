@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import Profiles from './mycomponent/Profiles/Profiles';
-import Dialogs from './mycomponent/Dialogs/Dialogs';
 import Header from './mycomponent/Header/Header';
 import Navbar from './mycomponent/Navbar/Navbar';
 import News from "./mycomponent/News/News";
 import {Route} from 'react-router-dom';
+import DialogsContainer from "./mycomponent/Dialogs/DialogsContainer";
 
 
 
@@ -16,9 +16,9 @@ function App(props) {
         <Navbar/>
         <div className="wrap_content">
           <Route path='/profiles'
-                 render={() => <Profiles store={props.store}/>}/>
+                 render={() => <Profiles />}/>
           <Route path='/dialogs'
-                 render={() => <Dialogs store={props.store} />}/>
+                 render={() => <DialogsContainer />}/>
           <Route path='/news' component={News}/>
         </div>
       </div>
