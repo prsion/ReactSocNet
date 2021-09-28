@@ -1,9 +1,8 @@
 import React from "react";
 import {connect} from "react-redux";
-import {followAC, setCurrentPageAC, setUsersAC, toggleIsFetchingAC, unfollowAC} from "../../redux/usersReducer";
+import {follow, setCurrentPage, setUsers, toggleIsFetching, unfollow} from "../../redux/usersReducer";
 import Users from "./Users";
 import * as axios from "axios";
-import spinner from "./../../../src/assets/images/spinner.gif";
 import Preloader from "../Common/Preloader";
 
 
@@ -53,7 +52,7 @@ let mapStateToProps = (state) =>{
   }
 
 }
-let mapDispatchToProps = (dispatch) => {
+/*let mapDispatchToProps = (dispatch) => {
   return{
    follow: (userId) =>{
           dispatch(followAC(userId));
@@ -70,13 +69,21 @@ let mapDispatchToProps = (dispatch) => {
     toggleIsFetching: (isFetching) =>{
      dispatch(toggleIsFetchingAC(isFetching))
     }
-    /*setTotalUsersCount: (totalCount) => {
+    /!*setTotalUsersCount: (totalCount) => {
       dispatch(setTotalUsersCountAC(totalCount));
-    }*/
+    }*!/
 
   }
 
-}
+}*/
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+export default connect(mapStateToProps,
+    {
+      follow,
+      unfollow,
+      setUsers,
+      setCurrentPage,
+      toggleIsFetching
+    }
+    )(UsersContainer);
