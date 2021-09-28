@@ -4,15 +4,23 @@ const SET_USERS = 'SET_USERS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 //const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 
-let initialState =  {
+
+/*props.setUsers([
+    {id:1, photoUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAQ1qjtECFvsSrmNG0QF9asoymDBHw7sILwQ&usqp=CAU", followed:false, fullName: "Max", status:"Im space cadet", location:{city:"Chicago", country:"Usa"}},
+    {id:2, photoUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAQ1qjtECFvsSrmNG0QF9asoymDBHw7sILwQ&usqp=CAU", followed:true, fullName: "Sasha", status:"Im deep immersed..", location:{city:"Kharkov", country:"Ukraine"}},
+    {id:3, photoUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAQ1qjtECFvsSrmNG0QF9asoymDBHw7sILwQ&usqp=CAU", followed:false, fullName: "James", status:"Im moon about", location:{city:"Toronto", country:"Canada"}},
+    {id:4, photoUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAQ1qjtECFvsSrmNG0QF9asoymDBHw7sILwQ&usqp=CAU", followed:true, fullName: "Mishel", status:"Are you kidding me?",location:{city:"Bordo", country:"France"}},
+  ]*/
+
+let initialState = {
   users:[],
   pageSize: 5,
-  totalUsersCount: 20,
+  totalUsersCount: 25,
   currentPage:1
 }
 
 
-const profileReducer = (state=initialState , action) => {
+const usersReducer = (state=initialState , action) => {
   switch(action.type){
     case FOLLOW:
       return {
@@ -34,20 +42,18 @@ const profileReducer = (state=initialState , action) => {
           return u;
         })
       }
-    case SET_USERS: {
+    case SET_USERS:
       //return {...state, users: [...state.users, ...action.users]}
       return {...state, users: action.users}
-    }
-    case SET_CURRENT_PAGE:{
+
+    case SET_CURRENT_PAGE:
       return {...state, currentPage:action.currentPage}
 
-    }
+
     /*case SET_TOTAL_USERS_COUNT:{
       return {...state, totalUsersCount:action.count}
 
     }*/
-
-
     default: return state;
   }
 
@@ -60,4 +66,4 @@ export const setUsersAC = (users) => ({type: SET_USERS, users});
 export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
 //export const setTotalUsersCountAC = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, count:totalUsersCount});
 
-export default profileReducer;
+export default usersReducer;
