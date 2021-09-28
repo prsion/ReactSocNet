@@ -3,7 +3,7 @@ import style from './Users.module.css';
 
 
 let Users = (props) => {
-debugger;
+
     let pageCount = Math.ceil(props.totalUsersCount / props.pageSize);
     let pages = [];
     for(let i=1; i <= pageCount; i++){
