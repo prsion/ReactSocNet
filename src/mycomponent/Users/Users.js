@@ -13,8 +13,8 @@ let Users = (props) => {
   return<div>
     <div>
       {pages.map( p => {
-      return<span className={props.currentPage === p&&style.selectPage}
-      onClick={(e)=>{props.onPageChanged (p);}}>{p}</span>
+      return <div className={style.pagination}><div className={props.currentPage === p&&style.selectPage} 
+      onClick={(e)=>{props.onPageChanged (p);}}>{p}</div></div>
     })}
     </div>
 
