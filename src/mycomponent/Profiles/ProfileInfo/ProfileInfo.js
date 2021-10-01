@@ -7,7 +7,7 @@ const ProfileInfo = (props) => {
 	if(!props.profile){
 		return <Preloader/>
 	}
-	debugger;
+
 	return (
 		<div className={style.content}>
 			<img className={style.img1} src="foto.jpg" alt="foto"/>
