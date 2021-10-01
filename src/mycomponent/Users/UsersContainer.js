@@ -35,6 +35,7 @@ class UsersContainer extends React.Component{
                    follow = {this.props.follow}
                    unfollow = {this.props.unfollow}
                    totalUsersCount ={this.props.totalUsersCount}
+                   
      />
       </>
     }
