@@ -33,10 +33,10 @@ let Users = (props) => {
         </div>
       </div>
       <div className={style.right}>
-        <div>{u.name}</div>
-        <div>{u.status}</div>
-        <div>{'u.location.country'} </div>
-        <div>{'u.location.city'} </div>
+        <div>{`My name is=${u.name}`}</div>
+        <div>{`id= ${u.id}`}</div>
+        <div>{`twitter= no Data`} </div>
+        <div>{`facebook= no Data`} </div>
       </div>
 
     </div>)
