@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Header.module.css';
 import Clock from "./Clock/Clock";
 import facebook from"./../../assets/images/facebook.png"
-
+import {NavLink} from "react-router-dom";
 
 
 
@@ -13,6 +13,10 @@ return (
         <div><img src={facebook}/></div>
       </div>
       <Clock />
+      <div className={s.loginBlock}>
+        {props.isAuth ? props.login:<NavLink to={"/login"}>Login</NavLink>}
+
+      </div>
     </div>
 
 

@@ -1,19 +1,19 @@
 import React from 'react';
 import './App.css';
-import Header from './mycomponent/Header/Header';
 import Navbar from './mycomponent/Navbar/Navbar';
 import News from "./mycomponent/News/News";
 import {Route} from 'react-router-dom';
 import DialogsContainer from "./mycomponent/Dialogs/DialogsContainer";
 import UsersContainer from "./mycomponent/Users/UsersContainer";
 import ProfilesContainer from "./mycomponent/Profiles/ProfilesContainer";
+import HeaderContainer from "./mycomponent/Header/HeaderContainer";
 
 
 
 function App(props) {
   return (
       <div className="wrap">
-        <Header/>
+        <HeaderContainer/>
         <Navbar/>
         <div className="wrap_content">
           <Route path='/profiles/:userId?'
