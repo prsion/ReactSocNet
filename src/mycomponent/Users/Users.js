@@ -1,8 +1,8 @@
 import React from "react";
 import style from './Users.module.css';
 import {NavLink} from "react-router-dom";
-import * as axios from "axios";
 import cris from'./../../assets/images/cris.jpg'
+import {instance} from "../api/api";
 
 let Users = (props) => {
 
@@ -30,7 +30,7 @@ let Users = (props) => {
           {u.followed
               ? <button onClick = {
                 () => {
-                  axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{
+                  instance.delete(`follow/${u.id}`,{
                     withCredentials: true,
                     headers : {
                       "API-KEY": "ace34fb7-fd40-4634-9016-78a7009a5337"
@@ -43,7 +43,7 @@ let Users = (props) => {
                 }}>Unfollow</button>
               : <button onClick = {
                 () => {
-                  axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{},{
+                  instance.post(`follow/${u.id}`,{},{
                     withCredentials: true,
                     headers : {
                       "API-KEY": "ace34fb7-fd40-4634-9016-78a7009a5337"
