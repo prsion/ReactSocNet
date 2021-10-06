@@ -2,7 +2,7 @@ import React from "react";
 import style from './Users.module.css';
 import {NavLink} from "react-router-dom";
 import cris from'./../../assets/images/cris.jpg'
-import {instance} from "../api/api";
+import {instance} from "../Api/Api";
 
 let Users = (props) => {
 
@@ -28,8 +28,9 @@ let Users = (props) => {
         </NavLink>
         <div>
           {u.followed
-              ? <button onClick = {
+              ? <button disabled ={props.followingInProgress.some(id=>id===u.id)} onClick = {
                 () => {
+									props.toggleFollowingProgress(true, u.id);
                   instance.delete(`follow/${u.id}`,{
                     withCredentials: true,
                     headers : {
@@ -39,10 +40,12 @@ let Users = (props) => {
                     if (response.data.resultCode === 0){
                         props.unfollow(u.id)
                     }
+										props.toggleFollowingProgress(false, u.id);
                   });
                 }}>Unfollow</button>
-              : <button onClick = {
+              : <button disabled ={props.followingInProgress.some(id=>id===u.id)} onClick = {
                 () => {
+									props.toggleFollowingProgress(true, u.id);
                   instance.post(`follow/${u.id}`,{},{
                     withCredentials: true,
                     headers : {
@@ -52,6 +55,7 @@ let Users = (props) => {
                     if (response.data.resultCode === 0){
                       props.follow(u.id)
                     }
+										props.toggleFollowingProgress(false, u.id);
                   });
                 }}>Follow</button>}
 
