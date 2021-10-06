@@ -2,7 +2,9 @@ import React from "react";
 import style from './Users.module.css';
 import {NavLink} from "react-router-dom";
 import cris from'./../../assets/images/cris.jpg'
-import {instance} from "../Api/Api";
+import {usersAPI} from "../Api/Api";
+
+
 
 let Users = (props) => {
 
@@ -29,34 +31,10 @@ let Users = (props) => {
         <div>
           {u.followed
               ? <button disabled ={props.followingInProgress.some(id=>id===u.id)} onClick = {
-                () => {
-									props.toggleFollowingProgress(true, u.id);
-                  instance.delete(`follow/${u.id}`,{
-                    withCredentials: true,
-                    headers : {
-                      "API-KEY": "ace34fb7-fd40-4634-9016-78a7009a5337"
-                    }
-                  }).then(response=>{
-                    if (response.data.resultCode === 0){
-                        props.unfollow(u.id)
-                    }
-										props.toggleFollowingProgress(false, u.id);
-                  });
+                () => { props.unfollow(u.id)
                 }}>Unfollow</button>
               : <button disabled ={props.followingInProgress.some(id=>id===u.id)} onClick = {
-                () => {
-									props.toggleFollowingProgress(true, u.id);
-                  instance.post(`follow/${u.id}`,{},{
-                    withCredentials: true,
-                    headers : {
-                      "API-KEY": "ace34fb7-fd40-4634-9016-78a7009a5337"
-                    }
-                  }).then(response=>{
-                    if (response.data.resultCode === 0){
-                      props.follow(u.id)
-                    }
-										props.toggleFollowingProgress(false, u.id);
-                  });
+                () => {props.follow(u.id)
                 }}>Follow</button>}
 
         </div>
