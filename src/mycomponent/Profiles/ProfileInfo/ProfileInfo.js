@@ -14,7 +14,7 @@ const ProfileInfo = (props) => {
 		<div className={style.content}>
 			<img className={style.img1} src={foto}/>
 			<div>
-				<img className={style.img2} src={props.profile.photos.large} />
+				<img className={style.img2} src={props.profile.photos.large?props.profile.photos.large:"https://social-network.samuraijs.com/activecontent/images/users/9/user-small.jpg?v=0"} />
 				<p>{`about me  ${props.profile.aboutMe}`}</p>
 				<p>{`myName ${props.profile.fullName}`}</p>
 				<p>{`my id ${props.profile.userId}`}</p>

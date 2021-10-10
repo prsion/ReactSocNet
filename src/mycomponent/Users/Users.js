@@ -2,7 +2,7 @@ import React from "react";
 import style from './Users.module.css';
 import {NavLink} from "react-router-dom";
 import cris from'./../../assets/images/cris.jpg'
-import {usersAPI} from "../Api/Api";
+
 
 
 
@@ -17,8 +17,9 @@ let Users = (props) => {
   return<div>
     <div>
       {pages.map( p => {
-      return <div className={style.pagination}><div className={props.currentPage === p&&style.selectPage} 
-      onClick={(e)=>{props.onPageChanged (p);}}>{p}</div></div>
+      return <div className={style.pagination} ><div className={props.currentPage===p&&style.selectPage}
+      onClick={(e)=>{props.onPageChanged (p);}}>{p}</div>
+      </div>
     })}
     </div>
 
@@ -31,7 +32,7 @@ let Users = (props) => {
         <div>
           {u.followed
               ? <button disabled ={props.followingInProgress.some(id=>id===u.id)} onClick = {
-                () => { props.unfollow(u.id)
+                () => {props.unfollow(u.id)
                 }}>Unfollow</button>
               : <button disabled ={props.followingInProgress.some(id=>id===u.id)} onClick = {
                 () => {props.follow(u.id)

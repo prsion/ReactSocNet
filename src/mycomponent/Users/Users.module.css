@@ -12,11 +12,9 @@
 }
 .right{
 
-
 }
 .selectPage{
   font-weight: bold;
-
 }
 .pagination{
 display: inline-block;
@@ -25,5 +23,4 @@ border: 2px solid grey;
 cursor: pointer;
 text-align: center;
 font-size: 1.5rem;
-
 }
