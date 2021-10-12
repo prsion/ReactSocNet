@@ -14,7 +14,7 @@ return (
       </div>
       <Clock />
       <div className={s.loginBlock}>
-        {props.isAuth ? props.login:<NavLink to={"/login"}>Login</NavLink>}
+        {props.isAuth ? props.login:<NavLink className={s.loginBlock} to={"/login"}>Login</NavLink>}
 
       </div>
     </div>
