@@ -5,6 +5,7 @@ import {getUserProfile} from "../../redux/profileReducer";
 import {connect} from "react-redux";
 import {Redirect, withRouter} from "react-router-dom";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {compose} from "redux";
 //import {usersAPI} from "../Api/Api";
 
 class ProfilesContainer extends React.Component{
@@ -30,20 +31,28 @@ class ProfilesContainer extends React.Component{
 }
 
 
-let AuthRedirectComponent = withAuthRedirect(ProfilesContainer);
+//let AuthRedirectComponent = withAuthRedirect(ProfilesContainer);
 
-/*let mapStateToPropsForRedirect = (state) =>({
+/*
+ !!! --- remove to second HOC in withauth redirect --- !!!
+
+let mapStateToPropsForRedirect = (state) =>({
   isAuth: state.auth.isAuth
 });
-AuthRedirectComponent = connect (mapStateToPropsForRedirect)(AuthRedirectComponent);*/
+AuthRedirectComponent = connect (mapStateToPropsForRedirect)(AuthRedirectComponent);
+*/
 
 
 
 let mapStateToProps = (state) =>({
 profile: state.profilePage.profile,
-  isAuth: state.auth.isAuth
-
 });
 
- let WithUrlDataProfilesContainer = withRouter(AuthRedirectComponent);
-export default connect(mapStateToProps,{getUserProfile})(WithUrlDataProfilesContainer);
+export default compose(
+    connect(mapStateToProps,{getUserProfile}),
+    withRouter,
+    withAuthRedirect
+)(ProfilesContainer);
+
+ /*let WithUrlDataProfilesContainer = withRouter(AuthRedirectComponent);
+export default connect(mapStateToProps,{getUserProfile})(WithUrlDataProfilesContainer);*/
