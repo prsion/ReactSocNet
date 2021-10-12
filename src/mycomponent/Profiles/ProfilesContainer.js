@@ -51,7 +51,7 @@ profile: state.profilePage.profile,
 export default compose(
     connect(mapStateToProps,{getUserProfile}),
     withRouter,
-    //withAuthRedirect
+    withAuthRedirect
 )(ProfilesContainer);
 
  /*let WithUrlDataProfilesContainer = withRouter(AuthRedirectComponent);
