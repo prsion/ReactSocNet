@@ -35,9 +35,10 @@ export const authApi = {
 }
 
 
+/*
 export const getUsers2 = (currentPage = 1, pageSize = 5) => {
   return instance.get(`users?page=${currentPage}&count=${pageSize}`)
       .then(responce => {
         return responce.data;
       });
-}
+}*/

@@ -3,7 +3,7 @@
   grid-area: h;
   height: 120px;
   max-width: 1800px;
-  background-color: cadetblue;
+  background-color: rgb(40, 72, 73);
   display: grid;
   float: left;
   grid-template-columns: 1fr 1fr 1fr;
@@ -19,4 +19,5 @@
   }
 .loginBlock{
     float: right;
+		color: aliceblue;
 }
