@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ReactSocNet/static/css/main.577f9dc1.chunk.css",
+    "main.js": "/ReactSocNet/static/js/main.4d9a76cc.chunk.js",
+    "main.js.map": "/ReactSocNet/static/js/main.4d9a76cc.chunk.js.map",
+    "runtime-main.js": "/ReactSocNet/static/js/runtime-main.4f90831a.js",
+    "runtime-main.js.map": "/ReactSocNet/static/js/runtime-main.4f90831a.js.map",
+    "static/js/2.1af955b9.chunk.js": "/ReactSocNet/static/js/2.1af955b9.chunk.js",
+    "static/js/2.1af955b9.chunk.js.map": "/ReactSocNet/static/js/2.1af955b9.chunk.js.map",
+    "index.html": "/ReactSocNet/index.html",
+    "static/css/main.577f9dc1.chunk.css.map": "/ReactSocNet/static/css/main.577f9dc1.chunk.css.map",
+    "static/js/2.1af955b9.chunk.js.LICENSE.txt": "/ReactSocNet/static/js/2.1af955b9.chunk.js.LICENSE.txt",
+    "static/media/foto.de7f89e6.jpg": "/ReactSocNet/static/media/foto.de7f89e6.jpg",
+    "static/media/spinner.0c299348.gif": "/ReactSocNet/static/media/spinner.0c299348.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4f90831a.js",
+    "static/js/2.1af955b9.chunk.js",
+    "static/css/main.577f9dc1.chunk.css",
+    "static/js/main.4d9a76cc.chunk.js"
+  ]
+}
