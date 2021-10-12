@@ -6,3 +6,13 @@
     width: 150px;
     height: 150px;
 }
+.content{
+
+}
+.content p:nth-child(3){
+margin-top: 15px;
+
+}
+.spanClick{
+cursor: pointer;
+}
