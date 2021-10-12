@@ -9,6 +9,7 @@ import {
 import Users from "./Users";
 import Preloader from "../Common/Preloader";
 import {usersAPI} from "../Api/Api";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 
 class UsersContainer extends React.Component{
   componentDidMount(){
@@ -48,30 +49,6 @@ let mapStateToProps = (state) =>{
   }
 
 }
-/*let mapDispatchToProps = (dispatch) => {
-  return{
-   follow: (userId) =>{
-          dispatch(followAC(userId));
-      },
-    unfollow: (userId) =>{
-      dispatch(unfollowAC(userId));
-    },
-    setUsers: (users) => {
-        dispatch(setUsersAC(users));
-    },
-    setCurrentPage: (pageNumber) => {
-        dispatch(setCurrentPageAC(pageNumber));
-    },
-    toggleIsFetching: (isFetching) =>{
-     dispatch(toggleIsFetchingAC(isFetching))
-    }
-    /!*setTotalUsersCount: (totalCount) => {
-      dispatch(setTotalUsersCountAC(totalCount));
-    }*!/
-
-  }
-
-}*/
 
 
-export default connect(mapStateToProps,    {follow,unfollow,toggleFollowingProgress,getUsers})(UsersContainer);
+export default withAuthRedirect(connect(mapStateToProps,    {follow,unfollow,toggleFollowingProgress,getUsers})(UsersContainer));
